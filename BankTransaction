@@ -1,0 +1,29 @@
+def deposit(num):
+    global balance
+    balance = balance+num
+
+def withdraw(num):
+    global balance
+    if(balance>=num):
+        balance = balance-num
+        return True 
+    elif(balance<num):
+        print("Insufficient Balance")
+        return False    
+
+list1=[]
+balance=0
+while True:
+    data=input("Enter Transaction Details: ")
+    if(data=="EXIT"):
+        break
+    list=data.split()
+    if(list[0]=="D"):
+          deposit(float(list[1]))
+          list1.append(list)     
+    elif(list[0]=="W"): 
+        if withdraw(float(list[1])):
+          list1.append(list)
+          
+print(list1)
+print("Balance is",balance)

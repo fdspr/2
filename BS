@@ -1,0 +1,30 @@
+#bubble
+def bubble_sort(arr):
+    for i in range(len(arr) - 1):
+        for j in range(len(arr) - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+
+# Example usage:
+data = [5, 3, 8, 6, 2]
+print("Original array:", data)
+bubble_sort(data)
+print("Sorted array:", data)
+
+
+
+#selection
+
+def selection_sort(arr):
+    for i in range(len(arr)):
+        min_index = i  # Assume the current index is the smallest
+        for j in range(i + 1, len(arr)):
+            if arr[j] < arr[min_index]:  # Find the smallest element in the unsorted part
+                min_index = j
+        arr[i], arr[min_index] = arr[min_index], arr[i]  # Swap the found minimum with the first element
+
+# Example usage:
+data = [64, 25, 12, 22, 11]
+print("Original array:", data)
+selection_sort(data)
+print("Sorted array:", data)

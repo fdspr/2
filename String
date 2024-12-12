@@ -1,0 +1,63 @@
+1.To display word with the longest length in a string.
+
+str1=input("Enter the string to display word with the longest length: \n")
+list1=str1.split()
+m=0
+word=0
+for i in range(len(list1)):
+ if m<len(list1[i]):
+   m=len(list1[i])
+   word=i
+print("The word with longest length:",list1[word])
+
+
+2. To count frequency of occurrence of particular character of string.
+
+str1 = input("Enter the string to count frequency of occurrence of particular character: \n")
+char = input("Enter character: ")
+counter = 0
+for i in range(len(str1)):
+   if char == str1[i]:
+     counter += 1
+print("Character",char,"is present",counter,"times in string",str1)
+
+
+3. To count the occurrences of each word in a string.
+
+str1 = input("Enter input string to count the occurrences of each word: \n")
+list1 = str1.split()
+list2 = set(list1)
+list3 = list(list2)
+print(list1)
+print(list3)
+list4 = []
+list5 = []
+counter = 0
+for i in range(len(list3)): 
+  counter = 0
+  for j in range(len(list1)): 
+    if list3[i] == list1[j]:
+      counter += 1
+  list4 = list3[i], counter
+  list5.append(list4)
+print("\n", list5)
+
+4. To check string is palindrome or not.
+
+a = input("Enter string is palindrome or not: \n")
+c=a[ : :-1]
+if (c==a):
+  print("String a is palindrome")
+else:
+  print("String a is not palindrome")
+
+
+5. To check substring index number in string.
+
+str1 = input("Enter the string To display index of first appearance of the substring: \n")
+sub1 = input("Enter substring:- \n")
+index=str1.find(sub1)
+sublen = len(sub1)
+print("substring index:", index)
+
+

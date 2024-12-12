@@ -1,0 +1,23 @@
+def shell_sort(arr):
+    n = len(arr)
+    gap = n // 2  # Initial gap size
+
+    while gap > 0:
+        for i in range(gap, n):
+            temp = arr[i]
+            j = i
+
+            # Perform gapped insertion sort
+            while j >= gap and arr[j - gap] > temp:
+                arr[j] = arr[j - gap]
+                j -= gap
+
+            arr[j] = temp
+
+        gap //= 2  # Reduce the gap size
+
+# Example usage:
+data = [12, 34, 54, 2, 3]
+print("Original array:", data)
+shell_sort(data)
+print("Sorted array:", data)
